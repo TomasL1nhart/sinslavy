@@ -5,7 +5,7 @@ if (!isset($_SESSION['admin'])) {
     exit;
 }
 
-include '../config/db.php'; // Ujisti se, že je správně zahrnut soubor s připojením k DB
+include 'config/db.php'; // Ujisti se, že je správně zahrnut soubor s připojením k DB
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $stmt = $pdo->prepare("INSERT INTO students (jmeno, prijmeni, rocnik, obor, rekord, obrazek) VALUES (?, ?, ?, ?, ?, ?)");
     $stmt->execute([$_POST['jmeno'], $_POST['prijmeni'], $_POST['rocnik'], $_POST['obor'], $_POST['rekord'], $_POST['obrazek']]);
