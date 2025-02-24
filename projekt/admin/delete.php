@@ -6,7 +6,7 @@ if (!isset($_SESSION['admin'])) {
 }
 
 // Načti připojení k databázi
-include '../config/db.php';
+include '/config/db.php';
 
 // Zkontroluj, jestli máme platné ID pro smazání
 if (isset($_GET['id'])) {
