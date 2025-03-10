@@ -5,5 +5,12 @@
         "field": "jomolo",
         "record": "je velk\u00fd skibidi toilet",
         "image": "assets\/default.jpg"
+    },
+    {
+        "name": "skibidi",
+        "year": "1",
+        "field": "F",
+        "record": "jojojo",
+        "image": "assets\/aboba.png"
     }
 ]

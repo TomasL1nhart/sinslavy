@@ -1,5 +1,6 @@
 <?php
 include 'auth.php';
+$records = json_decode(file_get_contents('records.json'), true);
 ?>
 <!DOCTYPE html>
 <html lang="cs">
@@ -10,18 +11,46 @@ include 'auth.php';
     <script defer src="dashboard.js"></script>
 </head>
 <body>
-    <div class="dashboard-container">
-        <h1>Admin Panel</h1>
-        <form id="record-form" enctype="multipart/form-data" action="process.php" method="POST">
-            <input type="text" name="name" placeholder="Jméno Příjmení" required>
-            <input type="text" name="year" placeholder="Ročník" required>
-            <input type="text" name="field" placeholder="Obor" required>
-            <textarea name="record" placeholder="Rekord" required></textarea>
-            <input type="file" name="image" accept="image/*" required>
-            <button type="submit">Přidat</button>
-        </form>
-        <ul id="record-list"></ul>
-        <a href="logout.php">Odhlásit</a>
-    </div>
+    <h1>Admin Panel</h1>
+    <form id="record-form" enctype="multipart/form-data" action="process.php" method="POST">
+        <input type="text" name="name" placeholder="Jméno Příjmení" required>
+        
+        <select name="year" required>
+            <option value="">Vyber ročník</option>
+            <option value="1">1. ročník</option>
+            <option value="2">2. ročník</option>
+            <option value="3">3. ročník</option>
+            <option value="4">4. ročník</option>
+        </select>
+        
+        <select name="field" required>
+            <option value="">Vyber obor</option>
+            <option value="A">A</option>
+            <option value="B">B</option>
+            <option value="C">C</option>
+            <option value="H">H</option>
+            <option value="F">F</option>
+            <option value="G">G</option>
+        </select>
+        
+        <textarea name="record" placeholder="Rekord" required></textarea>
+        <input type="file" name="image" accept="image/*" id="image-input" required>
+        <img id="file-preview" src="#" alt="Náhled obrázku">
+        <button type="submit">Přidat</button>
+    </form>
+    <br><br>
+    <ul id="record-list">
+        <?php foreach ($records as $index => $record): ?>
+            <li>
+                <?php echo $record['name'] . ' - ' . $record['record']; ?>
+                <form action="delete.php" method="POST" class="delete-form">
+                    <input type="hidden" name="index" value="<?php echo $index; ?>">
+                    <button type="submit" class="delete-btn">Smazat</button>
+                </form>
+            </li>
+        <?php endforeach; ?>
+    </ul>
+    
+    <a href="logout.php">Odhlásit</a>
 </body>
 </html>

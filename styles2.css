@@ -2,24 +2,105 @@ body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
     text-align: center;
+    margin: 0;
+    padding: 0;
 }
+
 .dashboard-container {
-    width: 50%;
-    margin: auto;
+    width: 20%;
+    margin: 50px auto;
     background: white;
-    padding: 20px;
+    padding: 5px;
     border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
-textarea {
-    width: 100%;
-    height: 100px;
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
 }
-button {
-    margin-top: 10px;
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 30px;
+    align-items: center;
+}
+
+input, textarea {
+    width: 50%;
     padding: 10px;
-    background: blue;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    text-align: center;
+}
+
+textarea {
+    height: 120px;
+    resize: none;
+}
+
+button {
+    width: 50%;
+    padding: 12px;
+    background: #007bff;
     color: white;
     border: none;
+    border-radius: 5px;
     cursor: pointer;
+    font-size: 16px;
+    transition: 0.3s;
+    text-align: center;
+}
+
+button:hover {
+    background: #0056b3;
+}
+
+#file-preview {
+    width: 80px;
+    height: 80px;
+    margin-top: 10px;
+    object-fit: cover;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    display: none;
+}
+
+#record-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 40px;
+}
+
+#record-list li {
+    background: #fff;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.delete-btn {
+    width: 100%;
+    background: #dc3545;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-left: 10px;
+    position: relative;
+    z-index: 1;
+}
+
+.delete-btn:hover {
+    background: #a71d2a;
 }
