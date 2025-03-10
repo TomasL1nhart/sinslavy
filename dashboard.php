@@ -13,7 +13,7 @@ $records = json_decode(file_get_contents('records.json'), true);
 <body>
     <h1>Admin Panel</h1>
     <form id="record-form" enctype="multipart/form-data" action="process.php" method="POST">
-        <input type="text" name="name" placeholder="Jméno Příjmení" required>
+        <input type="text" name="name" placeholder="Jméno a příjmení" required>
         
         <select name="year" required>
             <option value="">Vyber ročník</option>

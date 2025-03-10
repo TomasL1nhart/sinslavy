@@ -1,16 +1,16 @@
 [
     {
+        "name": "Tom\u00e1\u0161 Linhart",
+        "year": "3",
+        "field": "H",
+        "record": "100 Klik\u016f my\u0161\u00ed.",
+        "image": "assets\/logo-havarijni-plan.png"
+    },
+    {
         "name": "Tomas skibidak",
         "year": "3.C",
         "field": "jomolo",
         "record": "je velk\u00fd skibidi toilet",
         "image": "assets\/default.jpg"
-    },
-    {
-        "name": "skibidi",
-        "year": "1",
-        "field": "F",
-        "record": "jojojo",
-        "image": "assets\/aboba.png"
     }
 ]
