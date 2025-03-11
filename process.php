@@ -25,10 +25,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $recordsFile = 'records.json';
     $records = json_decode(file_get_contents($recordsFile), true);
     
-    // Přidání nového záznamu na začátek pole
     array_unshift($records, $newRecord);
     
-    // Uložení změn zpět do souboru
     file_put_contents($recordsFile, json_encode($records, JSON_PRETTY_PRINT));
     
     header("Location: dashboard.php");

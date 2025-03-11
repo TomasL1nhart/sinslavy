@@ -40,17 +40,26 @@ $records = json_decode(file_get_contents('records.json'), true);
     </form>
     <br><br>
     <ul id="record-list">
-        <?php foreach ($records as $index => $record): ?>
-            <li>
-                <?php echo $record['name'] . ' - ' . $record['record']; ?>
-                <form action="delete.php" method="POST" class="delete-form">
-                    <input type="hidden" name="index" value="<?php echo $index; ?>">
-                    <button type="submit" class="delete-btn">Smazat</button>
-                </form>
-            </li>
-        <?php endforeach; ?>
-    </ul>
-    
+    <?php foreach ($records as $index => $record): ?>
+        <li>
+            <?php echo $record['name'] . ' - ' . $record['record']; ?>
+            <form action="delete.php" method="POST" class="delete-form" onsubmit="return confirmDelete(event)">
+                <input type="hidden" name="index" value="<?php echo $index; ?>">
+                <button type="submit" class="delete-btn">Smazat</button>
+            </form>
+        </li>
+    <?php endforeach; ?>
+</ul>
+
+<script>
+function confirmDelete(event) {
+    if (!confirm("Opravdu chcete tento záznam smazat?")) {
+        event.preventDefault();
+        return false;
+    }
+    return true;
+}
+</script>
     <a href="logout.php">Odhlásit</a>
 </body>
 </html>
