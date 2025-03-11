@@ -8,6 +8,11 @@
     <link rel="stylesheet" href="styles.css">
     <script defer src="script.js"></script>
 </head>
+<style>
+    .record p {
+        font-size: 1.35rem;
+    }
+</style>
 <body>
     <div class="background"></div>
     <div class="container">
