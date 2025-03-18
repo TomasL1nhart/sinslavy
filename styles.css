@@ -111,8 +111,8 @@ body {
     align-items: center;
     width: 80%;
     max-width: 1200px;
-    padding: 20px;
-    border-radius: 15px;
+    padding: 40px;
+    border-radius: 12px;
     background-color: white;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     overflow: hidden;
@@ -151,7 +151,7 @@ body {
 
 /* Apply fade-in and blur animation for the image */
 .image-container {
-    width: 40%;
+    width: 50%;
     text-align: center;
     animation: fadeInWithBlur 1s ease-out forwards;
 }
@@ -162,7 +162,7 @@ body {
 }
 
 .image-container img {
-    border-radius: 50%;
+    border-radius: 40%;
     width: 180px;
     height: 180px;
     object-fit: cover;
