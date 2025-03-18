@@ -7,7 +7,7 @@
     <script defer src="dashboard.js"></script>
 </head>
 <body>
-    <h1>Admin Panel</h1>
+    <h1>Úspěchy Editor</h1>
     <form id="record-form" enctype="multipart/form-data" action="process.php" method="POST">
         <input type="text" name="name" placeholder="Jméno a příjmení" required>
         

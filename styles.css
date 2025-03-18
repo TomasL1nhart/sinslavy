@@ -146,12 +146,12 @@ body {
 
 .record p {
     font-size: 1rem;
-    color: #777;
+    color: #5e5e5e;
 }
 
 /* Apply fade-in and blur animation for the image */
 .image-container {
-    width: 50%;
+    width: 40%;
     text-align: center;
     animation: fadeInWithBlur 1s ease-out forwards;
 }
@@ -162,7 +162,7 @@ body {
 }
 
 .image-container img {
-    border-radius: 40%;
+    border-radius: 20%;
     width: 180px;
     height: 180px;
     object-fit: cover;
