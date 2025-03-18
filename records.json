@@ -1,23 +1,2 @@
 [
-    {
-        "name": "Dobro lobo",
-        "year": "2",
-        "field": "C",
-        "record": "ooooo",
-        "image": "assets\/logo-havarijni-plan.png"
-    },
-    {
-        "name": "gogogo",
-        "year": "2",
-        "field": "B",
-        "record": "jooojoo",
-        "image": "assets\/landing.jpg"
-    },
-    {
-        "name": "Tomoko jomo",
-        "year": "1",
-        "field": "C",
-        "record": "hohoho",
-        "image": "assets\/rgrp.jpg"
-    }
 ]
