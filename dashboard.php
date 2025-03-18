@@ -1,7 +1,3 @@
-<?php
-include 'auth.php';
-$records = json_decode(file_get_contents('records.json'), true);
-?>
 <!DOCTYPE html>
 <html lang="cs">
 <head>
@@ -33,33 +29,53 @@ $records = json_decode(file_get_contents('records.json'), true);
             <option value="G">G</option>
         </select>
         
-        <textarea name="record" placeholder="Ú" required></textarea>
+        <textarea name="record" placeholder="Úspěch" required></textarea>
         <input type="file" name="image" accept="image/*" id="image-input" required>
-        <img id="file-preview" src="#" alt="Náhled obrázku">
+        <br>
+        <img id="file-preview" src="#" alt="Náhled obrázku" style="display: none; width: 100px; height: 100px; object-fit: cover; border: 1px solid #ccc;">
+        <br>
         <button type="submit">Přidat</button>
     </form>
     <br><br>
+    
     <ul id="record-list">
-    <?php foreach ($records as $index => $record): ?>
-        <li>
-            <?php echo $record['name'] . ' - ' . $record['record']; ?>
-            <form action="delete.php" method="POST" class="delete-form" onsubmit="return confirmDelete(event)">
-                <input type="hidden" name="index" value="<?php echo $index; ?>">
-                <button type="submit" class="delete-btn">Smazat</button>
-            </form>
-        </li>
-    <?php endforeach; ?>
-</ul>
+        <?php foreach ($records as $index => $record): ?>
+            <li>
+                <?php echo $record['name'] . ' - ' . $record['record']; ?>
+                <form action="delete.php" method="POST" class="delete-form" onsubmit="return confirmDelete(event)">
+                    <input type="hidden" name="index" value="<?php echo $index; ?>">
+                    <button type="submit" class="delete-btn">Smazat</button>
+                </form>
+            </li>
+        <?php endforeach; ?>
+    </ul>
 
-<script>
-function confirmDelete(event) {
-    if (!confirm("Opravdu chcete tento záznam smazat?")) {
-        event.preventDefault();
-        return false;
-    }
-    return true;
-}
-</script>
+    <script>
+        document.getElementById("image-input").addEventListener("change", function(event) {
+            const file = event.target.files[0];
+            const preview = document.getElementById("file-preview");
+
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    preview.src = e.target.result;
+                    preview.style.display = "block";
+                };
+                reader.readAsDataURL(file);
+            } else {
+                preview.style.display = "none";
+            }
+        });
+
+        function confirmDelete(event) {
+            if (!confirm("Opravdu chcete tento záznam smazat?")) {
+                event.preventDefault();
+                return false;
+            }
+            return true;
+        }
+    </script>
+
     <a href="logout.php">Odhlásit</a>
 </body>
 </html>
