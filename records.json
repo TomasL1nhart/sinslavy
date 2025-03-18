@@ -1,1 +1,9 @@
-[]
+[
+    {
+        "name": "Dobro lobo",
+        "year": "2",
+        "field": "C",
+        "record": "jokokoko",
+        "image": "assets\/default.jpg"
+    }
+]

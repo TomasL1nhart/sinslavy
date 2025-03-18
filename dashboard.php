@@ -33,7 +33,7 @@ $records = json_decode(file_get_contents('records.json'), true);
             <option value="G">G</option>
         </select>
         
-        <textarea name="record" placeholder="Rekord" required></textarea>
+        <textarea name="record" placeholder="Ú" required></textarea>
         <input type="file" name="image" accept="image/*" id="image-input" required>
         <img id="file-preview" src="#" alt="Náhled obrázku">
         <button type="submit">Přidat</button>

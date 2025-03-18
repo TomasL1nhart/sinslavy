@@ -19,7 +19,7 @@
         <div class="record">
             <h1 id="student-name">Jméno Příjmení</h1>
             <h2 id="student-info">Ročník a obor</h2>
-            <p id="student-record">Rekord</p>
+            <p id="student-record">Úspěch</p>
         </div>
         <div class="image-container">
             <img id="student-image" src="assets/default.jpg" alt="Student">
